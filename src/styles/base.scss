@@ -1,0 +1,173 @@
+HTML,
+body,
+div,
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+blockquote,
+pre,
+form,
+fieldset,
+table,
+th,
+td {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "微软雅黑";
+  font-size: 14px;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+input::-ms-clear {
+  display: none;
+}
+input::-ms-reveal {
+  display: none;
+}
+input {
+  // -webkit-appearance: none;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+input::-webkit-input-placeholder {
+  color: #ccc;
+}
+input::-ms-input-placeholder {
+  color: #ccc;
+}
+input::-moz-placeholder {
+  color: #ccc;
+}
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+img {
+  border: none;
+}
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+
+/* 设置滚动条整体，宽高 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+/* 设置滚动条的轨道 */
+::-webkit-scrollbar-track {
+  background: rgba(179, 185, 188, 0.4);
+  border-radius: 0px;
+}
+/* 设置滚动条里面的小方块 */
+::-webkit-scrollbar-thumb {
+  background: rgba(39, 128, 251, 0.5);
+  border-radius: 0px;
+}
+
+/*公共方法*/
+.cleafix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  overflow: hidden;
+  height: 0;
+}
+// 文字超出显示 ...
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 全局弹出对话框
+.el-dialog {
+  position: absolute !important;
+  margin: 0 !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  // 对话框头部颜色
+  .el-dialog__header {
+    background: #fff;
+    padding: 9px 0px 8px 16px !important;
+    height: 28px;
+    line-height: 28px;
+    border-bottom: 1px solid #dcdee0;
+    .el-dialog__title {
+      color: #000000;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .el-dialog__headerbtn {
+      top: 0;
+      .el-icon {
+        color: rgb(148, 146, 146);
+      }
+    }
+  }
+  // body
+  .el-dialog__body {
+    padding: 20px 16px;
+  }
+  // footer
+  .el-dialog__footer {
+    line-height: 0;
+    background: #f3f3f3;
+    height: 46px;
+    .dialog-footer {
+      .el-button {
+        width: 62px;
+        height: 28px;
+        font-size: 14px;
+        border-radius: 2px;
+      }
+    }
+  }
+}
+.server {
+  height: 788px;
+  .el-dialog__body {
+    height: 742px;
+    overflow-y: auto;
+  }
+}

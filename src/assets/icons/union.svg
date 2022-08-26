@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组备份 12</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="首页定稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="编组备份-12" transform="translate(-466.000000, -127.000000)" filter="url(#filter-1)">
+            <g transform="translate(467.000000, 128.000000)">
+                <path d="M0,6 L0,1.5 C0,0.671575 0.671575,0 1.5,0 L16.5,0 C17.32845,0 18,0.671575 18,1.5 L18,6" id="路径" stroke="#333333" stroke-width="2"></path>
+                <line x1="13" y1="9" x2="13" y2="12.5" id="路径" stroke="#333333" stroke-width="2"></line>
+                <line x1="9" y1="4.5" x2="9" y2="12.5" id="路径" stroke="#333333" stroke-width="2"></line>
+                <line x1="5" y1="6.5" x2="5" y2="12.5" id="路径" stroke="#333333" stroke-width="2"></line>
+                <path d="M0,12 L0,16.5 C0,17.32845 0.671575,18 1.5,18 L16.5,18 C17.32845,18 18,17.32845 18,16.5 L18,12" id="路径" stroke="#333333" stroke-width="2"></path>
+            </g>
+        </g>
+    </g>
+</svg>
