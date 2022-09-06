@@ -3,7 +3,6 @@
     <header>head</header>
     <div class="routerBox">
       <router-view> </router-view>
-      <el-button></el-button>
     </div>
   </div>
 </template>

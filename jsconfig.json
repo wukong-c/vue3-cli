@@ -5,10 +5,23 @@
     "baseUrl": "./",
     "moduleResolution": "node",
     "jsx": "preserve",
+    "types": [
+      "element-plus/global"
+    ],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
   },
-  "exclude": ["node_modeules", "dist"]
+  "exclude": [
+    "node_modeules",
+    "dist"
+  ]
 }

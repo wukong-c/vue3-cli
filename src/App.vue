@@ -6,6 +6,5 @@
 <script setup>
 import { ElConfigProvider } from "element-plus";
 import zhCn from "element-plus/lib/locale/lang/zh-cn";
-window.document.documentElement.setAttribute("data-theme", "dark");
 </script>
 <style lang="scss"></style>

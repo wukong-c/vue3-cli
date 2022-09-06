@@ -1,16 +1,16 @@
 import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import eslintPlugin from "vite-plugin-eslint";
-import path from "path";
-import AutoImport from "unplugin-auto-import/vite";
+import path from "node:path";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import ElementPlus from "unplugin-element-plus/vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
-import topLevelAwait from "vite-plugin-top-level-await";
 import legacy from "@vitejs/plugin-legacy";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
+  console.log(env);
   return {
     base: "./",
     server: {
@@ -41,30 +41,24 @@ export default defineConfig(({ mode }) => {
       eslintPlugin({
         include: ["src/**/*.js", "src/**/*.vue", "src/*.js", "src/*.vue"],
       }),
-      AutoImport({
-        resolvers: [
-          ElementPlusResolver({
-            importStyle: "sass",
-          }),
-        ],
-      }),
+      //自动引入组件及其样式
       Components({
         resolvers: [
           ElementPlusResolver({
             importStyle: "sass",
+            directives: true,
           }),
         ],
+      }),
+      //手动引入ELMessage等时 自动引入样式
+      ElementPlus({
+        useSource: true,
       }),
       createSvgIconsPlugin({
         // 指定需要缓存的图标文件夹
         iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
         // 指定symbolId格式
         symbolId: "icon-[dir]-[name]",
-      }),
-      //因为router那里使用了顶层await
-      topLevelAwait({
-        promiseExportName: "__tla",
-        promiseImportName: i => `__tla_${i}`,
       }),
       legacy({
         targets: ["defaults", "not IE 11"],
