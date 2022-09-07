@@ -6,5 +6,6 @@
 <script setup>
 import { ElConfigProvider } from "element-plus";
 import zhCn from "element-plus/lib/locale/lang/zh-cn";
+let a = 1;
 </script>
 <style lang="scss"></style>
