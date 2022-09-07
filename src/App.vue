@@ -1,5 +1,5 @@
 <template>
-  <el-config-provider v-if="true" size="default" :z-index="3000" :locale="zhCn">
+  <el-config-provider size="default" :z-index="3000" :locale="zhCn">
     <router-view></router-view>
   </el-config-provider>
 </template>
