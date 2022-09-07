@@ -7,7 +7,13 @@
     "dev": "vite",
     "lint": "eslint --fix --ext .js --ext .vue src",
     "build": "npm run lint && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "npm run lint"
+    ]
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -22,6 +28,8 @@
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/eslint-parser": "^7.18.9",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@iconify-json/ep": "^1.1.6",
     "@vitejs/plugin-legacy": "^2.0.1",
     "@vitejs/plugin-vue": "^3.0.0",
@@ -29,6 +37,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "node": "^18.7.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.1",
