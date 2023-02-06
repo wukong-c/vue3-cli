@@ -7,7 +7,6 @@ import "virtual:svg-icons-register";
 import componentsArr from "./components/index.js";
 import * as directive from "./directive";
 import initSystem from "./configs/init";
-import "element-plus/theme-chalk/src/index.scss";
 import "./styles/index.scss";
 
 const app = createApp(App);

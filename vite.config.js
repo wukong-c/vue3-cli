@@ -6,6 +6,7 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import ElementPlus from "unplugin-element-plus/vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import { createHtmlPlugin } from "vite-plugin-html";
 import legacy from "@vitejs/plugin-legacy";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -20,7 +21,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       target: "es2020",
-      outDir: "dist",
+      outDir: "dist/output",
       rollupOptions: {
         output: {
           chunkFileNames: "static/js/[name]-[hash].js",
@@ -48,10 +49,22 @@ export default defineConfig(({ mode }) => {
             directives: true,
           }),
         ],
+        dts: "components.d.ts",
       }),
       //手动引入ELMessage等时 自动引入样式
       ElementPlus({
         useSource: true,
+      }),
+      //html插件
+      createHtmlPlugin({
+        minify: true,
+        entry: "src/main.js",
+        template: "index.html",
+        inject: {
+          data: {
+            title: env.VITE_TITLE,
+          },
+        },
       }),
       createSvgIconsPlugin({
         // 指定需要缓存的图标文件夹

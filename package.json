@@ -2,7 +2,6 @@
   "name": "projectname",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "lint": "eslint --fix --ext .js --ext .vue src",
@@ -17,39 +16,46 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "echarts": "^5.3.3",
-    "element-plus": "^2.2.12",
+    "echarts": "^5.4.1",
+    "element-plus": "^2.2.29",
     "js-cookie": "^3.0.1",
     "mitt": "^3.0.0",
-    "pinia": "^2.0.17",
+    "pinia": "^2.0.30",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
-    "@babel/eslint-parser": "^7.18.9",
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@iconify-json/ep": "^1.1.6",
-    "@vitejs/plugin-legacy": "^2.0.1",
-    "@vitejs/plugin-vue": "^3.0.0",
-    "eslint": "^8.21.0",
-    "eslint-config-prettier": "^8.5.0",
+    "@babel/core": "^7.20.12",
+    "@babel/eslint-parser": "^7.19.1",
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@iconify-json/ep": "^1.1.8",
+    "@vitejs/plugin-legacy": "^2.3.1",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.3.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "node": "^18.7.0",
-    "prettier": "^2.7.1",
-    "sass": "^1.54.1",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "node": "^18.14.0",
+    "prettier": "^2.8.3",
+    "sass": "^1.58.0",
     "svg-sprite-loader": "^6.0.11",
     "unplugin-auto-import": "^0.10.3",
     "unplugin-element-plus": "^0.4.1",
-    "unplugin-icons": "^0.14.8",
-    "unplugin-vue-components": "^0.22.0",
-    "vite": "^3.0.0",
-    "vite-plugin-eslint": "^1.7.0",
+    "unplugin-icons": "^0.14.15",
+    "unplugin-vue-components": "^0.22.12",
+    "vite": "^3.2.5",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-html": "^3.2.0",
     "vite-plugin-svg-icons": "^2.0.1",
-    "vite-plugin-top-level-await": "^1.1.1"
+    "vite-plugin-top-level-await": "^1.2.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
