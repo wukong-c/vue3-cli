@@ -6,7 +6,6 @@ import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import "virtual:svg-icons-register";
 import componentsArr from "./components/index.js";
 import * as directive from "./directive";
-import initSystem from "./configs/init";
 import "./styles/index.scss";
 
 const app = createApp(App);
@@ -27,6 +26,3 @@ componentsArr.forEach(item => {
 app.use(createPinia());
 app.use(router);
 app.mount("#app");
-// initSystem().then(() => {
-//   app.mount("#app");
-// });
