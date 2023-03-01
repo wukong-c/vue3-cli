@@ -26,7 +26,7 @@ componentsArr.forEach(item => {
 
 app.use(createPinia());
 app.use(router);
-
-initSystem().then(() => {
-  app.mount("#app");
-});
+app.mount("#app");
+// initSystem().then(() => {
+//   app.mount("#app");
+// });
