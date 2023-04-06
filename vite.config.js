@@ -3,14 +3,18 @@ import vue from "@vitejs/plugin-vue";
 import eslintPlugin from "vite-plugin-eslint";
 import path from "node:path";
 import Components from "unplugin-vue-components/vite";
+import fullImportPlugin from "./config/fullImportPlugin";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import ElementPlus from "unplugin-element-plus/vite";
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import { createHtmlPlugin } from "vite-plugin-html";
 import legacy from "@vitejs/plugin-legacy";
+import AutoImport from "unplugin-auto-import/vite";
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
+  console.log(mode);
   return {
     base: "./",
     server: {
@@ -20,7 +24,6 @@ export default defineConfig(({ mode }) => {
       hmr: true,
     },
     build: {
-      target: "es2020",
       outDir: "dist/output",
       rollupOptions: {
         output: {
@@ -41,19 +44,25 @@ export default defineConfig(({ mode }) => {
       eslintPlugin({
         include: ["src/**/*.js", "src/**/*.vue", "src/*.js", "src/*.vue"],
       }),
-      //自动引入组件及其样式
-      Components({
-        resolvers: [
-          ElementPlusResolver({
-            importStyle: "sass",
-            directives: true,
+      //开发环境全量引入，打包自动引入组件及其样式
+      mode === "development"
+        ? fullImportPlugin()
+        : Components({
+            resolvers: [ElementPlusResolver()],
           }),
-        ],
-        dts: "components.d.ts",
-      }),
       //手动引入ELMessage等时 自动引入样式
       ElementPlus({
         useSource: true,
+      }),
+      // 自动导入vue、vue-router、pinia相关api
+      AutoImport({
+        imports: ["vue", "vue-router", "pinia"],
+        // 是否生成声明文件
+        dts: "./config/auto-imports.d.ts",
+        eslintrc: {
+          enabled: true,
+          filepath: "./config/.eslintrc-auto-import.json",
+        },
       }),
       //html插件
       createHtmlPlugin({

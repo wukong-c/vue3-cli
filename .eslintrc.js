@@ -9,6 +9,7 @@ module.exports = {
     "plugin:vue/vue3-recommended",
     "plugin:prettier/recommended",
     "eslint-config-prettier",
+    "./config/.eslintrc-auto-import.json",
   ],
   parserOptions: {
     ecmaVersion: "latest",

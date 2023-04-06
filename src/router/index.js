@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import Layout from "@/layout/Layout.vue";
 import Error404 from "../components/errorComponent/404.vue";
-import Layout from "../views/Layout.vue";
+
 const HelloWorld = () => import("@/views/HelloWorld/Index.vue");
 
 let routes = [
