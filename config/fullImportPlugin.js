@@ -21,7 +21,6 @@ export default function fullImportPlugin() {
         code = code.replace(".mount(", $1 => `.use(${name})` + $1);
         return prepend + code;
       }
-      return code;
     },
   };
 }

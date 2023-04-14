@@ -44,11 +44,16 @@ export default defineConfig(({ mode }) => {
         include: ["src/**/*.js", "src/**/*.vue", "src/*.js", "src/*.vue"],
       }),
       //开发环境全量引入，打包自动引入组件及其样式
-      mode === "development"
-        ? fullImportPlugin()
-        : Components({
-            resolvers: [ElementPlusResolver()],
-          }),
+      {
+        ...fullImportPlugin(),
+        apply: "serve",
+      },
+      {
+        ...Components({
+          resolvers: [ElementPlusResolver()],
+        }),
+        apply: "build",
+      },
       //手动引入ELMessage等时 自动引入样式
       ElementPlus({
         useSource: true,
